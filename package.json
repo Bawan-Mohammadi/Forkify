@@ -1,0 +1,36 @@
+{
+  "name": "forkify",
+  "version": "1.0.0",
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": "> 0.25%, not dead"
+        }
+      ]
+    ],
+    "plugins": [
+      "@babel/plugin-transform-private-methods",
+      "@babel/plugin-transform-class-properties"
+    ]
+  },
+  "description": "recipe application",
+  "license": "ISC",
+  "author": "bawan",
+  "type": "commonjs",
+  "scripts": {
+    "start": "parcel forkify.html",
+    "build": "parcel build forkify.html --dist-dir ./dist"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-class-properties": "^7.28.6",
+    "@babel/plugin-transform-private-methods": "^7.28.6",
+    "parcel": "^2.16.4"
+  },
+  "dependencies": {
+    "core-js": "^3.49.0",
+    "fraction.js": "^5.3.4",
+    "regenerator-runtime": "^0.14.1"
+  }
+}

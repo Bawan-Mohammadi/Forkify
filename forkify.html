@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forkify</title>
+    <link rel="stylesheet" type="text/css" href="forkify.css" />
+    <script type="module" src="./js/controller.js"></script>
+  </head>
+  <body class="flex-utility">
+   <div class="recipe-modal-wrapper overlay">
+  <div class="recipe-modal">
+    <div class="close-button-wrapper">
+      <button class="close-button" type="button">x</button>
+    </div>
+
+    <form class="recipe-form">
+      <div class="recipe-columns">
+        <div class="recipe-data">
+          <h3>recipe data</h3>
+
+          <label>Title</label>
+          <input name="title" type="text" />
+
+          <label>URL</label>
+          <input name="sourceUrl" type="text" />
+
+          <label>Image URL</label>
+          <input name="image" type="text" />
+
+          <label>Publisher</label>
+          <input name="publisher" type="text" />
+
+          <label>Prep time</label>
+          <input name="cookingTime" type="number" />
+
+          <label>Servings</label>
+          <input name="servings" type="number" />
+        </div>
+
+        <div class="recipe-data">
+          <h3>ingredients</h3>
+
+          <label>Ingredient 1</label>
+          <input name="ingredient-1" type="text" placeholder="Format: 'Quantity, Unit, Description'" />
+
+          <label>Ingredient 2</label>
+          <input name="ingredient-2" type="text" placeholder="Format: 'Quantity, Unit, Description'" />
+
+          <label>Ingredient 3</label>
+          <input name="ingredient-3" type="text" placeholder="Format: 'Quantity, Unit, Description'" />
+
+          <label>Ingredient 4</label>
+          <input name="ingredient-4" type="text" placeholder="Format: 'Quantity, Unit, Description'" />
+
+          <label>Ingredient 5</label>
+          <input name="ingredient-5" type="text" placeholder="Format: 'Quantity, Unit, Description'" />
+
+          <label>Ingredient 6</label>
+          <input name="ingredient-6" type="text" placeholder="Format: 'Quantity, Unit, Description'" />
+        </div>
+      </div>
+  <div class="upload-status"></div>
+      <div class="upload-button-wrapper">
+        <button class="upload-button" type="submit">
+          <svg class="upload-icon">
+            <use xlink:href="icons.svg#icon-upload-cloud"></use>
+          </svg>
+          UPLOAD
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+    <div class="box-container">
+      <header class="box-head">
+        <img class="img-logo" alt="logo" src="logo(2).png" />
+        <form class="flex-utility search-bar" tabindex="0">
+          <input
+            class="search-input"
+            type="text"
+            placeholder="Search over 1,000,000 recepies..."
+          />
+          <button class="search-button">
+            <svg class="search-icon">
+              <use xlink:href="icons.svg#icon-search"></use>
+            </svg>
+            <p>SEARCH</p>
+          </button>
+        </form>
+        <div class="nav">
+          <button class="nav-button nav-button-one">
+            <svg class="all-icon">
+              <use xlink:href="icons.svg#icon-edit"></use>
+            </svg>
+            <p class="nav-text">ADD RECIPE</p>
+          </button>
+          <button class="nav-button nav-button-two">
+            <svg class="bookmark-icon-1" viewBox="0 0 24 24">
+              <path
+                d="M17 2h-10c-1.7 0-3 1.3-3 3v16c0 0.4 0.2 0.7 0.5 0.9s0.7 0.1 1-0.1l6.4-4.6 6.4 4.6c0.2 0.1 0.4 0.2 0.6 0.2s0.3 0 0.5-0.1c0.3-0.2 0.5-0.5 0.5-0.9v-16c0.1-1.7-1.2-3-2.9-3z"
+              />
+            </svg>
+            <p class="nav-text">BOOKMARKS</p>
+          </button>
+        </div>
+      </header>
+      <div class="bookmark-modal-wrapper">
+        <div class="bookmark-modal">
+          <div class="bookmark-modal-text">
+            <svg class="bookmark-modal-icon">
+              <use xlink:href="icons.svg#icon-alert-triangle"></use>
+            </svg>
+            <p>No bookmarks yet. Find a nice recipe and bookmark it.</p>
+          </div>
+        </div>
+      </div>
+      <div class="box-side">
+        <div class="results">
+          <!-- <a class="side-food-wrapper">
+          <div class="side-img-wrapper">
+            <img class="side-img" src="images.jpg" alt="picture" />
+          </div>
+          <div class="side-grid">
+            <p class="side-food-name">one basic pizza crust</p>
+            <p class="side-food-creator">the pioneer woman</p>
+            <svg class="user-icon-side">
+              <use xlink:href="icons.svg#icon-user"></use>
+            </svg>
+          </div>
+        </a> -->
+        </div>
+        <div class="pagination">
+          <!-- 
+                 <button class="page-button button-two flex-utility">
+              <p>Page <span>2</span></p>
+              <svg>
+                <use xlink:href="icons.svg#icon-arrow-left"></use>
+              </svg>
+            </button>
+
+            <button class="page-button button-one flex-utility">
+              <svg>
+                <use xlink:href="icons.svg#icon-arrow-right"></use>
+              </svg>
+              <p>Page <span>1</span></p>
+            </button>
+    
+      
+     
+  
+       -->
+        </div>
+      </div>
+
+      <div class="box-body">
+        <!-- <div class="spinner">
+          <svg>
+            <use xlink:href="icons.svg#icon-loader"></use>
+          </svg> 
+        </div>-->
+        <div class="flex-utility">
+          <div class="message">
+            <svg>
+              <use xlink:href="icons.svg#icon-star"></use>
+            </svg>
+            <p>Start by searching for a recipe or an ingredient. Have fun!</p>
+          </div>
+        </div>
+        <!-- <div class="flex-utility">
+          <div class="error">
+            <svg>
+              <use xlink:href="icons.svg#icon-alert-triangle"></use>
+            </svg>
+            <p>No recipes found for your query. Please try again.</p>
+          </div>
+        </div>
+       <div class="body-img-wrapper">
+          <img class="body-img" src="images.jpg" alt="picture" />
+          <h1 class="body-food-title"><span>one basic pizza crust</span></h1>
+        </div>
+        
+        <div class="body-food-details-bookmark">
+          <div class="body-food-details">
+            <div class="food-details-flex">
+              <svg class="all-icon">
+                <use xlink:href="icons.svg#icon-clock"></use>
+              </svg>
+              <p><span>120</span> minutes</p>
+            </div>
+            <div class="food-details-flex">
+              <svg class="all-icon">
+                <use xlink:href="icons.svg#icon-users"></use>
+              </svg>
+              <p><span>5</span> servings</p>
+              <div>
+                <button class="servings-btn">
+                  <svg class="all-icon">
+                    <use xlink:href="icons.svg#icon-minus-circle"></use>
+                  </svg></button>
+                <button class="servings-btn">
+                  <svg class="all-icon">
+                    <use xlink:href="icons.svg#icon-plus-circle"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="body-user-bookmark">
+            <div class="user-icon-body">
+              <svg class="all-icon">
+                <use xlink:href="icons.svg#icon-user"></use>
+              </svg>
+            </div>
+            <div class="body-food-bookmark">
+              <button class="body-food-bookmark-button flex-utility">
+                <svg class="bookmark-icon-2" viewBox="0 0 24 24">
+                  <path
+                    d="M17 2h-10c-1.7 0-3 1.3-3 3v16c0 0.4 0.2 0.7 0.5 0.9s0.7 0.1 1-0.1l6.4-4.6 6.4 4.6c0.2 0.1 0.4 0.2 0.6 0.2s0.3 0 0.5-0.1c0.3-0.2 0.5-0.5 0.5-0.9v-16c0.1-1.7-1.2-3-2.9-3z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="ingredients flex-utility">
+          <p class="body-head-text">Recipe ingredients</p>
+          <div>
+            <div class="ingredients-space">
+               <div class="ingredients-detailed">
+                <svg class="all-icon">
+                  <use xlink:href="icons.svg#icon-check"></use>
+                </svg>
+
+                <p>12 oz weight farfalle pasta</p>
+              </div> -->
+        <!-- <div class="ingredients-detailed">
+                <svg class="all-icon">
+                  <use xlink:href="icons.svg#icon-check"></use>
+                </svg>
+                <p> <span>12</span> <span>oz</span> <span>weight farfalle pasta</span></p>
+              </div>
+            </div>
+            <div class="ingredients-space">
+              <div class="ingredients-detailed">
+                <svg class="all-icon">
+                  <use xlink:href="icons.svg#icon-check"></use>
+                </svg>
+
+                <p>12 oz weight farfalle pasta</p>
+              </div>
+              <div class="ingredients-detailed">
+                <svg class="all-icon">
+                  <use xlink:href="icons.svg#icon-check"></use>
+                </svg>
+                <p>12 oz weight farfalle pasta</p>
+              </div>
+            </div>
+            <div class="ingredients-space">
+              <div class="ingredients-detailed">
+                <svg class="all-icon">
+                  <use xlink:href="icons.svg#icon-check"></use>
+                </svg>
+
+                <p>12 oz weight farfalle pasta</p>
+              </div>
+              <div class="ingredients-detailed">
+                <svg class="all-icon">
+                  <use xlink:href="icons.svg#icon-check"></use>
+                </svg>
+                <p>12 oz weight farfalle pasta</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="how-to flex-utility">
+          <p class="body-head-text">How to cook it</p>
+
+          <p class="how-to-text">
+            This recipe was carefully designed and tested by
+            <span class="creator-name-how-to">The Pioneer Woman</span>. Please
+            check out directions at their website.
+          </p>
+   <a href="" target="_blank" class="directions-button">
+  DIRECTIONS
+  <svg class="right-arrow">
+    <use href="icons.svg#icon-arrow-right"></use>
+  </svg>
+</a>
+        </div> -->
+      </div>
+    </div>
+  </body>
+</html>
